@@ -184,9 +184,36 @@ small {
   font-family: "Poppins";
 }
 
+.failed h1, .succeed h1 {
+  font-family:  "Damion", cursive;
+}
+
+body:has(.failed) {
+  background-color: #f706069e;
+  color: #ffffff;
+}
+
+body:has(.succeed) {
+  background-color: yellow;
+}
+
 .success {
   background-color: #8fff8f;
   color: #000;
+}
+
+.redirect-handler {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-60%);
+  width: 100%;
+  text-align: center;
+}
+
+.redirect-handler > * {
+  display: inline-block;
+  margin: 0 1rem;
 }
 
 /* Chrome, Safari, Edge, Opera */

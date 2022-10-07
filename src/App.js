@@ -6,6 +6,7 @@ import Default from "./pages/Default";
 import Custom from "./pages/Custom";
 import Layout from "./components/Layout";
 import CustomCheckout from "./pages/CustomCheckout";
+import RedirectHandler from "./pages/RedirectHandler";
 
 function App() {
   const handleClick = (type) => {
@@ -22,6 +23,10 @@ function App() {
 
   if (window.location.pathname.startsWith("/custom-checkout")) {
     return <CustomCheckout />;
+  }
+
+  if (window.location.pathname.startsWith("/redirect")) {
+    return <RedirectHandler />;
   }
 
   return (

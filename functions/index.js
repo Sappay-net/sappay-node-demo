@@ -87,3 +87,32 @@ exports.checkout = functions.https.onRequest((request, response) => {
     }
   });
 });
+
+exports.getCheckoutStatus = functions.https.onRequest((request, response) => {
+  cors(request, response, async () => {
+    if (request.method !== "GET") {
+      // Return a "method not allowed" error
+      return response.status(405).end({
+        statusCode: 405,
+        message: "Method not allowed",
+      });
+    }
+    try {
+      // authenticate
+      await sappay.authentication();
+      // get checkout status
+      const checkoutStatus = await sappay.getCheckout(request.query.invoice_id);
+      console.log("checkoutStatus...");
+      console.log(checkoutStatus);
+      functions.logger.info(checkoutStatus, { structuredData: true });
+      // send checkout status to client
+      response.status(200).send({ checkoutStatus });
+    } catch (error) {
+      if (error instanceof ApiError) {
+        const errors = error.result;
+        functions.logger.info(errors, { structuredData: true });
+      }
+      response.status(422).send({ error: `${error}` });
+    }
+  });
+});

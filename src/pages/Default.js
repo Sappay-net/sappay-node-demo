@@ -20,7 +20,6 @@ const Default = () => {
           amount,
         }),
       });
-      console.log(await response.json());
       const { invoiceId } = await response.json();
       window.location.href = `https://checkout.sappay.net/${invoiceId}`;
     } catch (error) {
