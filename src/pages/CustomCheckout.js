@@ -22,7 +22,7 @@ const CustomCheckout = () => {
           invoice_id: invoiceId,
           customer_msisdn: msisdn,
           otp,
-          payment_processor_id: "11664282935583738",
+          payment_processor_id: "11688813752134336",
         }),
       });
       const data = await response.json();
