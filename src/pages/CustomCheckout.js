@@ -40,6 +40,10 @@ const CustomCheckout = () => {
       }
       console.log(data);
     } catch (error) {
+      setResult({
+        status: "error",
+        message: "Invalid OTP or Something went wrong",
+      });
       console.log(error);
     }
   };
