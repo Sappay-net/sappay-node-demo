@@ -4,12 +4,12 @@ const cors = require("cors")();
 
 const sappayClient = new Client({
   credentials: {
-    username: "merchant@sappay.net",
-    password: "Test@1234",
-    clientId: "nPo1kGnMEBTgg7T7k3RGgWaKU4iylf8Kowr3rVxH",
+    username: "bf.nginx@gmail.com",
+    password: "MosesekoZANGOU_2015_**",
+    clientId: "eBYjsN0uMZPcXIFcGuBGEXehr27RdMZwTvPECweQ",
     clientSecret:
-      "NTvSzOCaTBOxU2AfHYnE7a5D3lCAsAi6KWxMvEJ0bzjf2NraKatTjILvdKmX0TwGGymr6cm5UUpNRJv17qEY3xkb183bGbquxHbeL756PRWVIYSEDUQqdAg5VL0CK3zC",
-  },
+      "drkmwL6gbEI5SMRHD0RijagUFuFKKYvevaix8vR2dCbXcQGIeaKzCtx6qOvrJmZsZgubHULTeCq47xtQf3PE6dF5kycMhqM5Mcq5WlRnsIiIqELMFRbB3SwOHfI6dZto",
+  }
 });
 
 const sappay = new ApiController(sappayClient);
