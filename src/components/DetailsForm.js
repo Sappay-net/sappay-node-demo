@@ -24,7 +24,7 @@ const DetailsForm = ({ onSubmit }) => {
           <img src={logo} alt="coffee icon" />
           <span>X &nbsp; 01</span>
         </span>
-        <span>$50.00</span>
+        <span>50.00 CFA</span>
       </div>
       <div>
         <label>Name</label>

@@ -6,9 +6,9 @@ const sappayClient = new Client({
   credentials: {
     username: "bf.nginx@gmail.com",
     password: "MosesekoZANGOU_2015_**",
-    clientId: "eBYjsN0uMZPcXIFcGuBGEXehr27RdMZwTvPECweQ",
+    clientId: "kfhHqiY9ZKnTLQH9I8d9El1TdMqZOcZSxWzEmgq1",
     clientSecret:
-      "drkmwL6gbEI5SMRHD0RijagUFuFKKYvevaix8vR2dCbXcQGIeaKzCtx6qOvrJmZsZgubHULTeCq47xtQf3PE6dF5kycMhqM5Mcq5WlRnsIiIqELMFRbB3SwOHfI6dZto",
+      "yU0h2J4CDi8F02dKsYNkCGInhgfsVLShZc47tUwLoaey8zl6CBwtmLGAG4SOBPsuHKVu1NsYzyDveF8zrY3OR9LhPiona28abhC7Fgkluna2Pj6VikorgwHtKsCxkbpD",
   }
 });
 
@@ -38,7 +38,7 @@ exports.createInvoice = functions.https.onRequest((request, response) => {
           details: request.body.details,
         },
         amount: request.body.amount,
-        type: "POS",
+        type: "ECOMMERCE",
         reference_id: orderId,
         token,
       });
@@ -83,7 +83,7 @@ exports.checkout = functions.https.onRequest((request, response) => {
         const errors = error.result;
         functions.logger.info(errors, { structuredData: true });
       }
-      response.status(422).send({ error: `${error}` });
+      response.status(422).send({ checkout: { error: `${error}` } });
     }
   });
 });

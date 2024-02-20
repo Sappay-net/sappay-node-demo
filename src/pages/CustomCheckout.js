@@ -27,10 +27,10 @@ const CustomCheckout = () => {
       });
       const data = await response.json();
       // eslint-disable-next-line
-      if (data.statusCode != 200) {
+      if (!response.ok) {
         setResult({
           status: "error",
-          message: data.error.result.message,
+          message: "Invalid OTP or Something went wrong",
         });
       } else {
         setResult({
@@ -40,10 +40,6 @@ const CustomCheckout = () => {
       }
       console.log(data);
     } catch (error) {
-      setResult({
-        status: "error",
-        message: "Invalid OTP or Something went wrong",
-      });
       console.log(error);
     }
   };
