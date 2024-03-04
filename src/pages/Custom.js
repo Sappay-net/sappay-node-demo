@@ -17,7 +17,7 @@ const Custom = () => {
           email,
           city: parseInt(city),
           country: parseInt(country),
-          amount: 50,
+          amount: 100,
         }),
       });
       const { invoiceId } = await response.json();

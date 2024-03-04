@@ -12,7 +12,7 @@ const DetailsForm = ({ onSubmit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    onSubmit({ name, email, city, country, amount: 50 }).then(() => {
+    onSubmit({ name, email, city, country, amount: 100 }).then(() => {
       setLoading(false);
     });
   };
@@ -24,7 +24,7 @@ const DetailsForm = ({ onSubmit }) => {
           <img src={logo} alt="coffee icon" />
           <span>X &nbsp; 01</span>
         </span>
-        <span>50.00 CFA</span>
+        <span>100.00 CFA</span>
       </div>
       <div>
         <label>Name</label>
